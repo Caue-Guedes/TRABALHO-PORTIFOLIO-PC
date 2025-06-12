@@ -1,31 +1,85 @@
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap');
 
 :root {
-    --cor-principal: #6E859F;
-    --cor-secundaria: #284260;
-    --cor-destaque: #C92BFC;
+    --cor-fundo: #F8F4E3; /* Novo: Fundo suave e acolhedor */
+    --cor-principal: #4A6D7C; /* Verde-azulado escuro para textos */
+    --cor-secundaria: #2C4A52; /* Verde-azulado muito escuro para títulos */
+    --cor-destaque: #E07A5F; /* Laranja queimado para destaques */
 }
 
 body {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Lato', sans-serif; /* Fonte amigável para o corpo */
     color: var(--cor-principal);
+    background-color: var(--cor-fundo); /* Aplica a nova cor de fundo */
 }
 
 h1, h2, h5 {
+    font-family: 'Merriweather', serif; /* Fonte educativa para títulos */
     color: var(--cor-secundaria);
     font-weight: 700;
 }
 
-.lead, .btn-link {
-    color: var(--cor-destaque);
+.lead {
+    color: var(--cor-destaque); /* Destaque para sua apresentação */
     font-weight: 700;
 }
 
-a, .btn-link:hover {
-    color: var(--cor-principal)
+/* Modificações para o Bootstrap e links */
+.badge.bg-secondary {
+    background-color: var(--cor-principal) !important; /* Cores das badges */
 }
 
-a:hover{
+.card {
+    border-color: var(--cor-principal); /* Borda dos cards */
+}
+
+.btn-link {
+    color: var(--cor-destaque);
+    font-weight: 700;
+    text-decoration: none; /* Remove sublinhado padrão */
+}
+
+.btn-link:hover {
+    color: var(--cor-secundaria); /* Escurece o destaque ao passar o mouse */
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+a {
+    color: var(--cor-destaque); /* Links gerais */
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--cor-secundaria); /* Escurece links ao passar o mouse */
+    text-decoration: underline;
+}
+
+.modal-content {
+    background-color: var(--cor-fundo); /* Fundo dos modais */
+    color: var(--cor-principal);
+}
+
+.modal-header {
+    border-bottom-color: var(--cor-principal); /* Borda do cabeçalho do modal */
+}
+
+.modal-footer {
+    border-top-color: var(--cor-principal); /* Borda do rodapé do modal */
+}
+
+/* Estilo para os ícones de contato */
+footer i {
+    color: var(--cor-secundaria); /* Cor do ícone */
+    margin-right: 8px; /* Espaço entre ícone e texto */
+    font-size: 1.5rem; /* Tamanho do ícone */
+    vertical-align: middle; /* Alinha o ícone com o texto */
+}
+
+footer a {
+    color: var(--cor-principal); /* Cor do texto do link no rodapé */
+    font-weight: bold;
+}
+
+footer a:hover {
     color: var(--cor-destaque);
 }
-
