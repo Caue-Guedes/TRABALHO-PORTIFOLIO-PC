@@ -1,85 +1,156 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap');
 
 :root {
-    --cor-fundo: #F8F4E3; /* Novo: Fundo suave e acolhedor */
+    --cor-fundo: #F8F4E3; /* Creme suave para o fundo */
     --cor-principal: #4A6D7C; /* Verde-azulado escuro para textos */
     --cor-secundaria: #2C4A52; /* Verde-azulado muito escuro para títulos */
-    --cor-destaque: #E07A5F; /* Laranja queimado para destaques */
+    --cor-destaque: #E07A5F; /* Laranja queimado para destaques e links */
+    --cor-badges: #6A8E9A; /* Um tom um pouco mais claro para as badges */
 }
 
 body {
-    font-family: 'Lato', sans-serif; /* Fonte amigável para o corpo */
+    font-family: 'Lato', sans-serif; /* Fonte amigável e legível para o corpo */
     color: var(--cor-principal);
-    background-color: var(--cor-fundo); /* Aplica a nova cor de fundo */
+    background-color: var(--cor-fundo);
 }
 
 h1, h2, h5 {
-    font-family: 'Merriweather', serif; /* Fonte educativa para títulos */
+    font-family: 'Merriweather', serif; /* Fonte serifada, educativa para títulos */
     color: var(--cor-secundaria);
     font-weight: 700;
 }
 
 .lead {
-    color: var(--cor-destaque); /* Destaque para sua apresentação */
+    color: var(--cor-destaque); /* Destaque para sua apresentação "Eu sou Cauê_" */
     font-weight: 700;
 }
 
-/* Modificações para o Bootstrap e links */
+/* Estilo para as badges de habilidades */
 .badge.bg-secondary {
-    background-color: var(--cor-principal) !important; /* Cores das badges */
+    background-color: var(--cor-badges) !important; /* Cor das badges */
+    color: white; /* Texto branco nas badges */
+    padding: 0.5em 0.8em; /* Ajuste do preenchimento */
+    margin: 0.2em; /* Espaçamento entre as badges */
+    border-radius: 0.3em; /* Borda levemente arredondada */
+    font-weight: normal; /* Peso da fonte normal */
+    display: inline-block; /* Para o margin funcionar bem */
 }
 
+/* Estilo dos cards */
 .card {
-    border-color: var(--cor-principal); /* Borda dos cards */
+    border: 1px solid var(--cor-principal); /* Borda sólida com a cor principal */
+    background-color: white; /* Fundo branco para os cards */
+    margin-bottom: 20px; /* Espaçamento entre os cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
+    transition: transform 0.2s ease-in-out; /* Transição para o hover */
 }
 
+.card:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+}
+
+.card-title {
+    color: var(--cor-secundaria); /* Título do card */
+    font-family: 'Merriweather', serif; /* Mantém a fonte dos títulos */
+}
+
+.card-text {
+    color: var(--cor-principal); /* Texto do card */
+}
+
+/* Estilo dos botões/links "Veja o projeto" */
 .btn-link {
     color: var(--cor-destaque);
     font-weight: 700;
-    text-decoration: none; /* Remove sublinhado padrão */
+    text-decoration: none; /* Remove o sublinhado padrão */
+    transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out; /* Transição para o hover */
 }
 
 .btn-link:hover {
-    color: var(--cor-secundaria); /* Escurece o destaque ao passar o mouse */
+    color: var(--cor-secundaria); /* Muda para a cor secundária ao passar o mouse */
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
 
+/* Estilo dos links gerais (como no footer e nos modais) */
 a {
-    color: var(--cor-destaque); /* Links gerais */
+    color: var(--cor-destaque);
     text-decoration: none;
+    transition: color 0.2s ease-in-out;
 }
 
 a:hover {
-    color: var(--cor-secundaria); /* Escurece links ao passar o mouse */
+    color: var(--cor-secundaria);
     text-decoration: underline;
 }
 
+/* Estilo dos Modais */
 .modal-content {
-    background-color: var(--cor-fundo); /* Fundo dos modais */
+    background-color: var(--cor-fundo);
     color: var(--cor-principal);
+    border-radius: 8px; /* Bordas arredondadas para os modais */
 }
 
 .modal-header {
-    border-bottom-color: var(--cor-principal); /* Borda do cabeçalho do modal */
+    border-bottom: 1px solid var(--cor-principal); /* Borda no cabeçalho do modal */
+    padding: 1rem 1.5rem;
+}
+
+.modal-title {
+    color: var(--cor-secundaria);
+    font-family: 'Merriweather', serif;
+}
+
+.modal-body {
+    padding: 1.5rem;
 }
 
 .modal-footer {
-    border-top-color: var(--cor-principal); /* Borda do rodapé do modal */
+    border-top: 1px solid var(--cor-principal); /* Borda no rodapé do modal */
+    padding: 1rem 1.5rem;
+    justify-content: flex-start; /* Alinha os links do footer do modal à esquerda */
+    gap: 15px; /* Espaço entre os links */
 }
 
-/* Estilo para os ícones de contato */
+/* Estilo do Rodapé */
+footer {
+    background-color: var(--cor-principal); /* Fundo do rodapé com a cor principal */
+    color: white; /* Texto branco no rodapé */
+    padding: 30px 0; /* Mais preenchimento */
+    text-align: center; /* Centraliza o texto */
+}
+
+footer h2 {
+    color: white; /* Título do rodapé branco */
+    margin-bottom: 20px;
+}
+
+footer div {
+    display: flex; /* Para alinhar ícone e link */
+    justify-content: center; /* Centraliza o grupo de ícone/link */
+    align-items: center;
+    margin-bottom: 10px;
+}
+
 footer i {
-    color: var(--cor-secundaria); /* Cor do ícone */
-    margin-right: 8px; /* Espaço entre ícone e texto */
-    font-size: 1.5rem; /* Tamanho do ícone */
-    vertical-align: middle; /* Alinha o ícone com o texto */
+    color: white; /* Ícones brancos no rodapé */
+    font-size: 1.8rem; /* Ícones maiores */
+    margin-right: 10px;
 }
 
 footer a {
-    color: var(--cor-principal); /* Cor do texto do link no rodapé */
+    color: white; /* Links brancos no rodapé */
     font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
 }
 
 footer a:hover {
-    color: var(--cor-destaque);
+    color: var(--cor-destaque); /* Destaque ao passar o mouse */
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.8); /* Copyright em um branco mais suave */
+    margin-top: 30px;
+    font-size: 0.9rem;
 }
